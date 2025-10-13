@@ -51,9 +51,9 @@ public class Fruit {
         System.out.println("Berat: " + getWeight());
         System.out.println("Harga: " + getPrice());
         System.out.println("Jumlah Beli: " + getQuantity() + "kg");
-        System.out.println("Harga Sebelum Diskon: Rp" + getPriceBefore());
-        System.out.println("Total Diskon: Rp" + getDiscount());
-        System.out.println("Harga Setelah Diskon: Rp" + getPriceAfter());
+        System.out.println("Harga Sebelum Diskon: Rp" + String.format("%.2f", getPriceBefore()));
+        System.out.println("Total Diskon: Rp" + String.format("%.2f", getDiscount()));
+        System.out.println("Harga Setelah Diskon: Rp" + String.format("%.2f", getPriceAfter()));
         System.out.println();
 
     }

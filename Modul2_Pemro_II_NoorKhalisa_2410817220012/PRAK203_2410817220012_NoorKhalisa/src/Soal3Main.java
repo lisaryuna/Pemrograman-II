@@ -8,7 +8,7 @@ public class Soal3Main {
         // sudah tidak error karena char diganti jadi string
         p1.asal = "Kingdom of Orvel";
         // pada baris ini error karena setJabatan yang ada di Pegawai.java tidak memiliki parameter
-        p1.setJabatan("Assassin");
+        p1.setJabatan("Assasin");
         // pada kode sebelumnya, umur belum diinisilisasi
         p1.umur = 17;
 
