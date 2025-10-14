@@ -9,11 +9,18 @@ public class Dog extends Pet{
         this.ability = ability;
     }
 
+    public String getFurColour() {
+        return furColour;
+    }
+
+    public String getAbilityAsString() {
+        return String.join(" ", ability);
+    }
+
     public void displayDogDetail() {
         System.out.println();
         super.display();
-        System.out.println("Memiliki warna Bulu: " + this.furColour);
-        String abilityStr = String.join(" ", ability);
-        System.out.println("Memiliki kemampuan: " + abilityStr);
+        System.out.println("Memiliki warna Bulu: " + getFurColour());
+        System.out.println("Memiliki kemampuan: " + getAbilityAsString());
     }
 }

@@ -7,9 +7,13 @@ public class Cat extends Pet {
         this.furColour = furColour;
     }
 
+    public String getFurColour() {
+        return furColour;
+    }
+
     public void displayCatDetail() {
         System.out.println();
         super.display();
-        System.out.println("Memiliki warna bulu: " + this.furColour);
+        System.out.println("Memiliki warna bulu: " + getFurColour());
     }
 }
