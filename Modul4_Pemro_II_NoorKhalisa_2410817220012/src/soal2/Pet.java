@@ -8,9 +8,17 @@ public class Pet {
         this.breed = breed;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
     public void display() {
         System.out.println("Detail Hewan Peliharaan: " );
-        System.out.println("Nama hewan peliharaanku adalah: " + this.name);
-        System.out.println("Dengan ras: " + this.breed);
+        System.out.println("Nama hewan peliharaanku adalah: " + getName());
+        System.out.println("Dengan ras: " + getBreed());
     }
 }
