@@ -2,6 +2,7 @@ package designpattern.myapp.core;
 
 import designpattern.myapp.pages.MainMenuPage;
 import designpattern.myapp.repository.InMemoryUserProfileRepository;
+import designpattern.myapp.repository.LoggingRepositoryDecorator;
 import designpattern.myapp.repository.UserProfileRepository;
 
 public class Application {
@@ -14,7 +15,8 @@ public class Application {
         this.inputHandler = new InputHandler();
         this.isRunning = true;
         this.currentPage = new MainMenuPage();
-        this.userProfileRepository = new InMemoryUserProfileRepository();
+        UserProfileRepository realRepository = new InMemoryUserProfileRepository();
+        this.userProfileRepository = new LoggingRepositoryDecorator(realRepository);
     }
 
     public UserProfileRepository getUserProfileRepository() {
