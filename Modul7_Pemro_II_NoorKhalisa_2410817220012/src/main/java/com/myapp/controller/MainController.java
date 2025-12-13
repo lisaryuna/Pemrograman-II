@@ -14,7 +14,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-
 public class MainController implements Initializable {
     @FXML private TableView<Subscription> subscriptionTable;
     @FXML private TableColumn<Subscription, String> colName;
@@ -58,7 +57,7 @@ public class MainController implements Initializable {
             LocalDate date = inputDate.getValue();
 
             if (name.isEmpty() || priceText.isEmpty() || type == null || date == null) {
-                showAlert("Error", "Semua data harus diisi!");
+                showAlert("Error", "All fields must be filled!");
                 return;
             }
 
@@ -74,12 +73,11 @@ public class MainController implements Initializable {
             DataRepo.addSubscription(newSub);
             handleClear();
         } catch (NumberFormatException e) {
-            showAlert("Error", "Harga harus berupa angka!");
+            showAlert("Error", "Price must be a valid number!");
         } catch (Exception e) {
-            showAlert("Error", "Terjadi Kesalahan: " + e.getMessage());
+            showAlert("Error", "An error occured: " + e.getMessage());
         }
     }
-
 
     @FXML
     private void handleUpdate() {
@@ -96,13 +94,12 @@ public class MainController implements Initializable {
                 subscriptionTable.refresh();
                 handleClear();
             } catch (NumberFormatException e) {
-                showAlert("Error", "Input harga harus angka!");
+                showAlert("Error", "Price must be a valid number!");
             }
         } else {
-            showAlert("Warning", "Pilih data di tabel dulu!");
+            showAlert("Warning", "Please select an item from the table first!");
         }
     }
-
 
     @FXML
     private void handleDelete() {
@@ -111,7 +108,7 @@ public class MainController implements Initializable {
             DataRepo.deleteSubscription(selected);
             handleClear();
         } else {
-            showAlert("Warning", "Pilih data yang mau dihapus!");
+            showAlert("Warning", "Please select an item to delete!");
         }
     }
 
